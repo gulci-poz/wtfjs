@@ -126,7 +126,20 @@ if (a > b) {
 
 Asynchronous Callback
 - asynchronous - więcej niż jedna instrukcja jednocześnie
+- callback - funkcje, które się wykonują w reakcji np. na zdarzenie (asynchronicznie)
+- asynchroniczność odnosi się do przeglądarki i elementów, które w niej działają i porozumiewają się ze sobą, np. asynchroniczne powiązanie silnika js z silnikiem renderującym lub z częścią obsługującą żądania http
+- podobne zagadnienie do jednowątkowego modelu js i wielowątkowości samej przeglądarki
+- sam silnik js to twór jednowątkowy i synchroniczny
+- kolejna struktura - event queue, przeglądarka dodaje do tej kolejki informacje o zdarzeniu, które wystąpiło, a o którym silnik js ma być informowany
+- funkcja callback nasłuchuje w oczekiwaniu na zdarzenie i w reakcji na jego wystąpienie wykonuje kod, który zawiera
+- zdarzenia w kolejce nie muszą być obsłużone w js, po prostu występujące zdarzenia przeglądarka zapisuje w kolejce
+- kiedy stos js jest pusty, silnik js sprawdza okresowo kolejkę wydarzeń (ponieważ czeka aż coś się w niej pojawi), jeśli wystąpiło jakieś zdarzenie i jest w kolejce, silnik js sprawdza czy jest w kodzie funkcja, która ma obsłużyc to zdarzenie (czy jest ustawiony listener z handlerem dla zdarzenia); jest tworzony EC dla funkcji handlera, stos znów jest opróżniany, wydarzenie jest usuwane z kolejki, kolejne wydarzenie może być obsłużone
+- to przeglądarka asynchronicznie do wykonywania kodu js, umieszcza zdarzenia w kolejce do przetworzenia, sam js musi mieć pusty stos - wtedy sprawdza zdarzenia w klejsce i synchronicznie, linia po linii, wykonuje funkcję, która obsługuje zdarzenie - EC tej funkcji jest na stosie i tam wykonuje się kod
+- cały czas działa event loop silnika js (synchronicznie); ta pętla działa cały czas, nawet po zakończeniu wykonywania kodu js, w tej pętli okresowo jest sprawdzana kolejka zdarzeń
+- to zdarzenia są asynchroniczne, js radzi sobie z nimi synchronicznie, tylko wtedy jeśli nie ma stosie innych EC, inaczej trzeba czekać na obsługę zdarzenia przez js
+- js obsługuje zdarzenia w kolejności ich wystąpienia
 
 -> reference/value w JavaScript???
+-> więcej o event loop???
 
 */
