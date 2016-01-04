@@ -7,6 +7,7 @@ console.log(a);
 // nigdy nie robimy takich rzeczy, pułapka gdy sprawdzamy czy zmienna ma przypisaną wartość
 //a = undefined;
 
+// === sprawdzenie nie tylko zgodności wartości (z konwersjami), ale również typu
 if(a === undefined) {
     console.log('a is undefined');
 } else {

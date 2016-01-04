@@ -71,3 +71,62 @@ Address: {
 - execution phase: interpretacja linia po linii, wtedy ma miejsce przypisanie wartości do zmiennych, również przypisanie funkcji do zmiennej
 
 */
+
+/*
+
+Single Threaded, Synchronous Execution
+- jednocześnie wykonuje się jedna komenda
+- w przeglądarce dzieje się wiele więcej rzeczy (więcej wątków)
+- z perspektywy programisty js działa jednowątkowo
+- synchronicznie - jedna komenda jednocześnie, kolejno linia po linii
+
+*/
+
+/*
+
+Function Invocation, Execution Stack
+- invocation - calling (running) a function - nawiasy: b()
+- uruchomienie funkcji - tworzy się nowy Execution Context, który ląduje na Execution Stack, tworzona jest zmienna this dla nowej funkcji; działający kontekst - kontekst, który jest na górze stosu, w nim wykonują się kolejne linie kodu - linia po linii
+- kontekst będzie miał miejsce na swoje zmienne i funkcje, podobnei jak global EC; również mamy hoisting (wartość undefined dla zmiennych)
+- uruchomienie kolejnej funkcji wewnątrz funkcji - powstanie kolejny EC i idzie na górę stosu
+- kolejna linia kodu następująca po wywołaniu funkcji nie wykona się, będzie czekała na zakończenie funkcji - mamy wykonywanie synchroniczne
+- po zakończeniu wykonywania funkcji są one kolejno zdejmowane ze stosu (pop)
+- nie ma znaczenia porządek leksykalny kodu oraz pozostały kod poza funkcjami
+- jeśli funkcja wywoła samą siebie, to również jest tworzony nowy EC
+
+*/
+
+/*
+
+Functions, Context, Variable Environments
+- VE - gdzie żyją zmienne i jakie są ich wzajemne relacje w pamięci
+- każdy EC ma swoje własne VE, zmienne z funkcji znajdują się w takim VE
+- global EC ma też swoje VE
+- scope - gdzie jesteśmy w stanie widzieć zmienną, gdzie jest dostępna
+- jeśli funkcja jest uruchomiona więcej razy, to mamy osobne EC i różne zmienne
+
+The Scope Chain
+- mamy referencję do Outer Environment, każdy EC
+- referencja niekoniecznie musi być do bezpośredniego sąsiada w stosie
+- tutaj działa Lexical Environment - ważne jest umiescowienie kodu funkcji względem kodu globalnego - to decyduje o scope zmiennej
+- referencja do OE jest zapisywana względem LE, a nie Execution Stack
+- interpreter znajdzie leksykalnie dostępną zmienną d w globalnym kontekście i silnik js w trakcie uruchomienia funkcji tak zapisze referencję do OE
+- scope chain szuka po referencjach do OE, nie trzeba przeszukiwać stosu Execution Stack (w przypadku zagnieżdżonych wywołań byłoby to nieczytelne i zasobożerne); technicznie, wyszukiwanie odbywa się w Execution Stack, ale są wykonywane skoki
+- zamiast szukania leksykalnego, kto mnie stworzył? który EC mnie stworzył (w swojej creation phase)?
+
+ES6
+- let - może być używane zamiast var, ale nie zastępuje go
+
+if (a > b) {
+    let c = true;
+}
+
+- let: zmienna c jest utworzona w creation phase i ma wartość undefined, ale nie możemy jej użyć aż do wywołania linii z deklaracją; jest w pamięci, ale silnik js nie pozwoli jej użyć
+- block-scoping: jeśli zmienna c jest zdefiniowana z let w bloku {}, to jest dostępna tylko w tym bloku, w czasie jego wykonania (if, while, for, funkcja - za każdym razem jest to inna zmienna)
+
+Asynchronous Callback
+- asynchronous - więcej niż jedna instrukcja jednocześnie
+
+-> reference/value w JavaScript???
+
+*/
