@@ -141,5 +141,6 @@ Asynchronous Callback
 
 -> reference/value w JavaScript???
 -> więcej o event loop???
+-> clojures???
 
 */
