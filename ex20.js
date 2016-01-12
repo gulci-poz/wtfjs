@@ -26,13 +26,39 @@ function greet() {
     console.log('hi');
 }
 
-// FE
+// FE - dzięki temu, że funkcje to first class functions
+
+// TypeError - undefined is not a function
+// mamy zmienną z obiektem funkcji, zmienna w tym momencie jest jeszcze undefined, tylko funkcje w postaci FS są w całości w pamięci i można je wywołać po creation phase (hoisting)
+//anonymousGreet();
 
 // mamy obiekt funkcji, znamy jego adres w pamięci, nie mamy nazwy (a dokładniej: właściwości nazwy, funkcja anonimowa); referencję zapamiętujemy pod zmienną, dzięki temu funkcja nie potrzebuje nazwy
 // mamy expression, wartością jest obiekt
 var anonymousGreet = function() {
-    console.log('hi');
+    console.log('funkcja anonimowa pod zmienną');
 };
 
 // wykonujemy kod funkcji, referencję do niej mamy w zmiennej
 anonymousGreet();
+
+// przekazywanie funkcji do funkcji jako argument
+
+function log(a) {
+    // wydrukuje ciało funkcji
+    console.log(a);
+    
+    // wykona funkcję
+    a();
+}
+
+// oba wywołania to FE
+
+log(anonymousGreet);
+
+// przekazanie podobne do object literal
+// przekazujemy referencję do miejsca w pamięci, które funkcja anonimowa ma zarezerwowane
+log(function() {
+    console.log('funkcja anonimowa w locie');
+});
+
+// takie manipulowanie funkcjami to element programowania funkcyjnego
