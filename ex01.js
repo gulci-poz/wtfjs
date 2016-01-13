@@ -1,9 +1,13 @@
 /*
 
 Syntax Parser
-- co robi kod, czy gramatyka jest poprawna
+- co robi kod, czy gramatyka jest poprawna, znak po znaku, przed wykonaniem kodu
 - nie tylko nasz kod, również dodatkowe czynności
 - naszego kodu nie wykonuje komputer, najpierw jest on tłumaczony na kod, który komputer wykona
+- w core js średniki są opcjonalne
+- automatic semicolon insertion - kiedy parser zobaczy znak CR (nieuprawniony), to automatycznie wstawia średnik (tam, gdzie jest oczekiwany)
+- zawsze sami wstawiamy nasze średniki
+- klamrę początkową { dajemy w linii instrukcji, nie w nowej linii
 
 Lexical Environment
 - gdzie coś się znajduje w kodzie, tam jest to ważne
