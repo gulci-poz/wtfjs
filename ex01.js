@@ -145,6 +145,25 @@ Asynchronous Callback
 
 ?-> więcej o event loop i eventach
 ?-> closures i callbacks
-?-> udawanie klas (za pomocą funkcji) <-- eloquent js
+?-> udawanie klas (za pomocą funkcji)
+?-> asynch
+?-> DOM
+
+?-> eloquent
+?-> allonge
+?-> angularjs by example
+?-> nodejs in action
+?-> mean
+
+?-> js & web, db
+?-> ms open source
+?-> server side: js, php, python
+?-> word press
+?-> fotografia
+
+?-> ms 1
+?-> ms 2
+?-> pyref
+?-> stx
 
 */
