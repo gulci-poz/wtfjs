@@ -5,7 +5,7 @@
 
 // this będzie wskazywać na różne obiekty, w zależności od tego, w jaki sposób funkcja jest wywołana
 
-// obiekt globalny nazywa się Window (z wielkiej litery, funkcja wewnątrz też jest z wielkiej litery, Window); w nodejs to innt obiekt
+// obiekt globalny nazywa się Window (z wielkiej litery, funkcja wewnątrz też jest z wielkiej litery, Window); w nodejs to inny obiekt
 // zmienna, która wskazuje na globalny obiekt to window (z małej litery)
 console.log(this);
 

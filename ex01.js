@@ -143,7 +143,8 @@ Asynchronous Callback
 - to zdarzenia są asynchroniczne, js radzi sobie z nimi synchronicznie, tylko wtedy jeśli nie ma stosie innych EC, inaczej trzeba czekać na obsługę zdarzenia przez js
 - js obsługuje zdarzenia w kolejności ich wystąpienia
 
--> więcej o event loop???
--> clojures???
+?-> więcej o event loop i eventach
+?-> closures i callbacks
+?-> udawanie klas (za pomocą funkcji) <-- eloquent js
 
 */
