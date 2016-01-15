@@ -4,19 +4,19 @@
 
 // tak naprawdę wszędzie można by użyć nazwy id, ale w trzech miejscach oznaczałaby ona co innego, lepiej to sobie zwizualizować odmiennymi nazwami zmiennych
 
-// generator w py zrobiłby to sprytniej, bez konieczności deklarowania każdej zmiennej w tablicy
+// generator w py zrobiłby to sprytniej, bez konieczności deklarowania każdej zmiennej w tablicy; dla ułatwienia można skorzystać z push() do tablicy w pętli
 
-var funArr = [
-    function (id) {
-        console.log('function, id: ' + id)
-    },
-    function (id) {
-        console.log('function, id: ' + id)
-    },
-    function (id) {
-        console.log('function, id: ' + id)
-    }
-];
+var funArr = [];
+var funArrLength = 10;
+
+for (var i = 0; i < funArrLength; i++) {
+    funArr.push(
+        // tutaj mamy closures, ale nie korzystamy z żadnej zewnętrznej zmiennej, np. i
+        function(id) {
+            console.log('function, id: ' + id);
+        }
+    );
+}
 
 var randomId = funArr.length * funArr.length;
 var randomIdEdge = randomId + 1;

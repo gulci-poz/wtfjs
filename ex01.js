@@ -154,6 +154,8 @@ Asynchronous Callback
 ?-> angularjs by example
 ?-> nodejs in action
 ?-> mean
+?-> jquery, bootstrap
+?-> Zakas, Crockford
 
 ?-> js & web, db
 ?-> ms open source
