@@ -10,6 +10,9 @@
 // mamy dzięki temu namespaces z pełną enkapsulacją z własnym EC, z samymi obiektami najwyższy poziom może się pokrywać z innym najwyższym poziomem, ponieważ są one w globalnym EC
 // oczywiście można przez przypadek zakryć zmienną (capsule), ale chodzi o enkapsulację co do EC
 
+// tak naprawdę korzystamy tutaj z closures (dla poszczególnych funkcji)
+// zamiast zwracać obiekt moglibyśmy zwracać funkcję lub kolejne IIFE, które zwracałoby funkcję (ex35.js)
+
 var capsule = (function() {
     return {
         run: function() {

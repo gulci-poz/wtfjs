@@ -5,6 +5,7 @@
 // tak naprawdę wszędzie można by użyć nazwy id, ale w trzech miejscach oznaczałaby ona co innego, lepiej to sobie zwizualizować odmiennymi nazwami zmiennych
 
 // generator w py zrobiłby to sprytniej, bez konieczności deklarowania każdej zmiennej w tablicy; dla ułatwienia można skorzystać z push() do tablicy w pętli
+// dalsze przykłady: clojures pomagają nam w generowaniu funkcji
 
 var funArr = [];
 var funArrLength = 10;
