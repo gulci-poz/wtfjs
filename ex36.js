@@ -1,4 +1,5 @@
 // function factories
+// użycie, np. zamiast function overload
 
 function makeGreeting(language) {
     
@@ -25,4 +26,4 @@ var greetSpanish = makeGreeting('es');
 greetEnglish('Sebastian', 'Gulczynski');
 greetSpanish('Sebastian', 'Gulczynski');
 
-//48 - 4:30
+// closure - closed-in, closed-up ;)
