@@ -14,6 +14,8 @@ for (var i = 0; i < arr1.length; i++) {
 console.log(arr2);
 
 // przekazujemy referencję do tablicy, więc trzeba uważać na manipulację wartościami w tablicy
+// w ogóle najlepiej, żeby małe funkcje pomocnicze nie zmieniały (mutate) żadnych danych
+// najlepiej zwracać coś nowego, a ewentualne zmiany robić jak najwyżej w łańcuchu wywołań
 function mapForEach(arr, fun) {
     var newArr = [];
     for (var i = 0; i < arr.length; i++) {
@@ -44,6 +46,8 @@ var arr5 = mapForEach(arr4, checkPastLimit.bind(this, 1));
 console.log(arr5);
 
 var checkPastLimitSimplified = function (limiter) {
+    // bind dołącza limiter przekazany do checkPastLimitSimplified
+    // limiter w zwracanej funkcji to lokalna zmienna
     return function(limiter, item) {
         return item > limiter;
     }.bind(this, limiter);
@@ -52,3 +56,7 @@ var checkPastLimitSimplified = function (limiter) {
 // do mapForEach przekazujemy funkcję zwróconą przez checkPastLimitSimplified; robimy currying
 var arr6 = mapForEach(arr4, checkPastLimitSimplified(1));
 console.log(arr6);
+
+// gulci's aside
+// "grep" w PS
+// Get-ChildItem -recurse | Select-String -pattern "new" | group path | select name
