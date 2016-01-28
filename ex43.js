@@ -8,7 +8,7 @@ var c = [];
 
 // zawiera base object - pokazuje Object {} a w środku jest kopia __proto__
 // to jest zawsze początek prototype chain
-// ten __proto__ już nie ma kolejnego __proto__
+// ten __proto__ już nie ma kolejnego __proto__ (bo jest base object)
 console.log(a.__proto__);
 
 // tutaj dostaniemy null (coś takiego nie istnieje, nie undefined), nie ma już nic powyżej
@@ -23,7 +23,7 @@ console.log(b.__proto__.__proto__);
 console.log(c.__proto__);
 console.log(c.__proto__.__proto__);
 
-// w przypadku funkcji i tablicy obiekty prototypu zawierają __proto__ czyli base object, prototyp zwykłego obiektu już jest base object - nie ma nic wyżej
+// w przypadku funkcji i tablicy obiekty prototypu są rozbudowane i zawierają __proto__ czyli base object, prototyp zwykłego obiektu już jest base object - nie ma nic wyżej
 
 a.prototype = {
     welcome: "hello"

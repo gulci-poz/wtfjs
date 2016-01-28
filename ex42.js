@@ -27,8 +27,9 @@ var john = {
 // normalnie korzystamy z obj.prototype, __proto__ obiektu jest wtedy nieruszony
 
 // john dziedziczy z person
-// __proto__ będzie obiektem z właściwościami z person, w nim też będzie __proto__, nadpisujemy __proto__ na najwyższym poziomie, ale nie nadpisujemy globalnego __proto__ (bo mamy kopię)
-// nie korzystamy z prototype, nie będziemy mieli dostępu do oryginalnego __proto__ obiektu john
+// __proto__ będzie obiektem z właściwościami z person, w nim też będzie jego __proto__, nadpisujemy __proto__ na najwyższym poziomie, ale nie nadpisujemy wzorcowego __proto__ (bo mamy kopię)
+// nie korzystamy z prototype
+// nie będziemy mieli dostępu do oryginalnego __proto__ obiektu john, bo go nadpiszemy
 // EC funkcji z person wie o jaki obiekt this nam chodzi - john
 // będziemy odwoływali się do właściwości z person tylko wtedy, gdy nie znajdziemy tych właściwości w john (prototype chain)
 john.__proto__ = person;
@@ -43,7 +44,7 @@ var jane = {
 jane.__proto__ = person;
 console.log(jane.getFullName());
 
-// ustawiamy nową właściwość na obiekcie jane, nie nadpisujemy właściwości z prototypu
+// ustawiamy nową właściwość na obiekcie jane, nie nadpisujemy właściwości z prototypu, mimo że tam ta właściwość istnieje
 /*
 jane.lastname = "Dummy";
 console.log(jane.getFullName());
