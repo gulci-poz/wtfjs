@@ -55,3 +55,5 @@ for (var prop in john) {
 }
 
 // żadne z tych wylistowań nie pokazuje __proto__
+
+// w ES6 ma być extends, za pomocą którego ustawimy prototyp

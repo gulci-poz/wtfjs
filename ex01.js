@@ -144,7 +144,6 @@ Asynchronous Callback
 - js obsługuje zdarzenia w kolejności ich wystąpienia
 
 ?-> więcej o event loop i eventach
-?-> udawanie klas (za pomocą funkcji)
 ?-> asynch
 ?-> DOM
 
