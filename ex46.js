@@ -1,7 +1,9 @@
 // konstruktor funkcji i prototyp
 
 // właściwości tworzymy w konstruktorze, a metody w prototypie
-// gdybyśmy dodali metodę w kontruktorze (a możemy), to każdy obiekt będzie miał swoją kopię metody - jest to obiekt, a więc zajmie miejsce w pamięcie
+// gdybyśmy dodali metodę w kontruktorze (a możemy), to każdy obiekt będzie miał swoją kopię metody - jest to obiekt, a więc zajmie miejsce w pamięci
+// stosujemy przypisanie = a nie :
+// to są statements w funkcji, a nie definicje właściwości w literale obiektu
 function Person(firstname, lastname) {
     this.firstname = firstname;
     this.lastname = lastname;
@@ -28,6 +30,8 @@ console.log(jane);
 Person.prototype.getFormalFullName = function () {
     return this.lastname + ", " + this.firstname;
 };
+
+// oczywiście możemy też na stworzonym obiekcie zmienić właściwość występującą w prototypie, zostanie ona zmieniona dla naszego obiektu - nadpisze wartość z prototypu, prototyp pozostanie nietknięty
 
 console.log(john.getFormalFullName());
 

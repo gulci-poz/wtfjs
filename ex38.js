@@ -81,7 +81,8 @@ function multiply(a, b) {
 var multiplyByTwo = multiply.bind(this, 2);
 console.log('multiplyByTwo: ' + multiplyByTwo(3));
 
-// gulci's aside - to think and TODO
+// gulci's aside - to think and todo
 /*
 za pomocą bind i jakiegoś warunku można konstruować ciekawe funkcje, np. w zależności od jakiejś wartości przekazany obiekt będzie zawierał odpowiednią do tej wartości metodę, a my tym sposobem wyprodukujemy sobie z bind nową funkcję; można też uwzględnić wartość z curryingu przy konstrukcji funkcji
 */
+// można komponować nazwę funkcji, złożyć ją do stringa i przekazać gdzieś, gdzie oczekiwana jest funkcja

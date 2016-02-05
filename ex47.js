@@ -51,12 +51,15 @@ Number.prototype.isPositive = function () {
 
 console.log((new Number(3)).isPositive());
 
+// dangerous aside
+
 // Number i String to nie są prymitywy, to obiekty, które opakowują prymitywy w dodatkową funkcjonalność
 
-console.log("prymityw vs obiekt")
+console.log("prymityw vs obiekt");
+// w przypadku == mamy coercion
 console.log(3 == new Number(3));
 console.log(3 === new Number(3));
-// prymityw, nie ma tworzenia zwracania obiektu z new
+// dostajemy prymityw, nie ma tworzenia i zwracania obiektu z new ponieważ używamy Number() jako zwykłej funkcji
 console.log(3 === Number(3));
 
 console.log("gulci" == new String("gulci"));
@@ -64,4 +67,15 @@ console.log("gulci" === new String("gulci"));
 // prymityw
 console.log("gulci" === String("gulci"));
 
-// jeśli nie musimy, to nie używamy wbudowanych konstruktorów dla prymitywnych typów - następny przykład
+// jeśli nie musimy, to nie używamy wbudowanych konstruktorów dla prymitywnych typów, używamy prymitywów
+
+// jest też Boolean()
+
+// biblioteka moment.js - do używania z datami, zamiast m. in. konstruktora Date()
+
+// gulci's aside
+
+// uwaga o funkcyjności JS
+// funkcje (first class functions) to obiekty
+// obiekty stworzone za pomocą konstruktora funkcji to trochę inne obiekty niż te stworzone za pomocą literału {} lub new Object(), prototypem jest obiekt, ale istnieje też właściwość costructor, tam można uruchomić apply()
+// obiekt może zawierać funkcję
