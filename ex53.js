@@ -35,3 +35,5 @@ function logNewPerson() {
 }
 
 logNewPerson();
+
+// cześć funkcjonalności ES6 wymaga włączenia flagi US (przeglądarki)
