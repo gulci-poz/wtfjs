@@ -1,8 +1,10 @@
 // gulci's aside
 // framework a biblioteka
-// framework to biblioteka, która buduje abstrakcję
+// framework to biblioteka, która buduje abstrakcję (moja definicja)
 
-(function (global, $) {
+// średnik zapewnia zakończenie kodu JS, który był załadowany wcześniej
+
+;(function (global, $) {
 
     // ta funkcja tak naprawdę służy do produkcji obiektów na życzenie
     var Greetr = function (firstName, lastName, language) {
@@ -113,9 +115,12 @@
 
     Greetr.init = function (firstName, lastName, language) {
         var self = this;
+
         self.firstName = firstName || "";
         self.lastName = lastName || "";
         self.language = language || "en";
+
+        self.validate();
     };
 
     // __proto__ obiektu utworzonego za pomocą konstruktora Greeter init będzie wskazywać na ten prototyp
